@@ -2,6 +2,11 @@ local clangDConfig = require("plugins.lsp.config.clangd")
 local goConfig = require("plugins.lsp.config.gopls")
 local luaConfig = require("plugins.lsp.config.lua_ls")
 local tsConfig = require("plugins.lsp.config.ts_ls")
+local htmlConfig = require("plugins.lsp.config.html")
+local htmxConfig = require("plugins.lsp.config.htmx")
+local emmetConfig = require("plugins.lsp.config.emmet")
+local templConfig = require("plugins.lsp.config.go-templ")
+local prettierConfig = require("plugins.lsp.config.prettier")
 
 -- LSP Plugins
 local config = {
@@ -184,11 +189,12 @@ local config = {
 		--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 		local servers = {
 			clangd = clangDConfig,
-			-- pyright = {},
-			-- rust_analyzer = {},
-			-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-
+			templ = templConfig,
+			emmet_language_server = emmetConfig,
+			html = htmlConfig,
+			htmx = htmxConfig,
 			gopls = goConfig,
+			prettier = prettierConfig,
 			ts_ls = tsConfig,
 			lua_ls = luaConfig,
 		}
